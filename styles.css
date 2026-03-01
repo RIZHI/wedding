@@ -7,7 +7,7 @@
 html,
 body {
   height: 100%;
-  background: #0b0b10;
+  background: #ffffff;
   overflow-y: auto;
   overflow-x: hidden;
   font-family: system-ui, sans-serif;
@@ -59,9 +59,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #3d2817;
   font-size: clamp(1.8rem, 4vw, 3rem);
-  background: radial-gradient(circle at center, #1a1a25, #0b0b10);
+  background: linear-gradient(circle at center, #f5f5f5, #ffffff);
   opacity: 0;
   transition: opacity 1.2s ease;
   z-index: 1;
@@ -79,11 +79,11 @@ body {
   height: 100%;
   background: linear-gradient(
     90deg,
-    #6b0f1a 0%,
-    #8c1323 25%,
-    #5e0b15 50%,
-    #8c1323 75%,
-    #6b0f1a 100%
+    #5a1e2d 0%,
+    #6b2435 25%,
+    #4d1620 50%,
+    #6b2435 75%,
+    #5a1e2d 100%
   );
   background-size: 120px 100%;
   will-change: transform;
@@ -116,11 +116,11 @@ body {
   top: 50%;
   width: 60px;
   height: 10px;
-  background: linear-gradient(to right, #d4af37, #f7e27b, #caa133);
+  background: linear-gradient(to right, #b96b6b, #d4a5a5, #c98888);
   border-radius: 20px;
   transform: scaleX(0);
   transition: transform 0.6s ease 1.2s;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 10px rgba(185, 107, 107, 0.6);
 }
 
 /* Tie placement */
@@ -138,17 +138,83 @@ body {
   transform: scaleX(1);
 }
 
+/* STAGE FOOTER */
+.stage-footer {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  padding: 20px 30px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.5s ease 1s;
+  z-index: 1;
+  border: 2px solid #b96b6b;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  margin: 0 20px;
+}
+
+.stage.open .stage-footer {
+  opacity: 1;
+}
+
+.footer-message {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: #3d2817;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* STAGE FOOTER */
+.stage-footer {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.5s ease 1s;
+  z-index: 1;
+}
+
+.stage.open .stage-footer {
+  opacity: 1;
+}
+
+.footer-message {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: #3d2817;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* HINT */
 .hint {
   position: absolute;
   bottom: 30px;
   width: 100%;
   text-align: center;
-  color: #aaa;
+  color: #8b6f5f;
   letter-spacing: 2px;
   font-size: 12px;
   animation: pulse 2s infinite;
   z-index: 3;
+}
+
+.stage.open .hint {
+  animation: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @keyframes pulse {
@@ -169,15 +235,23 @@ body {
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #1a1a25 0%, #0b0b10 100%);
-  color: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  color: #3d2817;
   text-align: center;
 }
 
 .wedding-section h2 {
   font-size: clamp(2.5rem, 8vw, 4rem);
-  margin-bottom: 60px;
-  color: #fff;
+  margin-bottom: 20px;
+  color: #3d2817;
+}
+
+.scratch-instruction {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: #b96b6b;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  font-family: system-ui, sans-serif;
 }
 
 .scratch-cards-container {
@@ -193,9 +267,9 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #d4af37 0%, #f7e27b 50%, #caa133 100%);
+  background: linear-gradient(135deg, #b96b6b 0%, #d4a5a5 50%, #c98888 100%);
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 20px rgba(185, 107, 107, 0.4);
   overflow: hidden;
 }
 
@@ -208,7 +282,7 @@ body {
   font-family: "Tangerine", cursive;
   font-size: 3rem;
   font-weight: 700;
-  color: #0b0b10;
+  color: #ffffff;
   z-index: 1;
 }
 
@@ -229,15 +303,15 @@ body {
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #0b0b10 0%, #1a1a25 100%);
-  color: white;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  color: #3d2817;
   text-align: center;
 }
 
 .countdown-section h2 {
   font-size: clamp(2.5rem, 8vw, 4rem);
   margin-bottom: 60px;
-  color: #fff;
+  color: #3d2817;
 }
 
 .countdown-container {
@@ -253,8 +327,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background: rgba(212, 175, 55, 0.1);
-  border: 2px solid #d4af37;
+  background: rgba(185, 107, 107, 0.1);
+  border: 2px solid #b96b6b;
   border-radius: 15px;
   min-width: 100px;
 }
@@ -263,13 +337,68 @@ body {
   font-family: "Tangerine", cursive;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
-  color: #d4af37;
+  color: #b96b6b;
   line-height: 1;
 }
 
 .countdown-label {
   font-size: clamp(0.8rem, 2vw, 1.2rem);
-  color: #aaa;
+  color: #666;
   margin-top: 10px;
   letter-spacing: 1px;
+}
+
+/* CELEBRATION MESSAGE */
+.celebration-message {
+  display: none;
+  font-family: "Tangerine", cursive;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: #b96b6b;
+  margin-top: 40px;
+  animation: fadeInScale 1s ease-out;
+}
+
+.celebration-message.show {
+  display: block;
+}
+
+/* CONFETTI ANIMATION */
+@keyframes confettiFall {
+  to {
+    transform: translateY(100vh) rotateZ(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: #b96b6b;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: confettiFall 3s ease-in-out forwards;
+  z-index: 1000;
+}
+
+.confetti::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
