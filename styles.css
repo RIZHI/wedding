@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background: #0b0b10;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: system-ui, sans-serif;
+}
+
+.tangerine-regular {
+  font-family: "Tangerine", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tangerine-bold {
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  margin: 0;
+}
+
+.name-top {
+  display: flex;
+  justify-content: center;
+}
+
+.name-center {
+  display: flex;
+  justify-content: center;
+}
+
+.name-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+/* MOBILE SAFE VIEWPORT */
+.stage {
+  position: relative;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* CONTENT */
+.content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  background: radial-gradient(circle at center, #1a1a25, #0b0b10);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  z-index: 1;
+}
+
+.stage.open .content {
+  opacity: 1;
+}
+
+/* CURTAIN */
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #6b0f1a 0%,
+    #8c1323 25%,
+    #5e0b15 50%,
+    #8c1323 75%,
+    #6b0f1a 100%
+  );
+  background-size: 120px 100%;
+  will-change: transform;
+  transition: transform 1.6s cubic-bezier(0.7, 0, 0.2, 1);
+  z-index: 2;
+}
+
+/* LEFT */
+.curtain.left {
+  left: 0;
+}
+
+/* RIGHT */
+.curtain.right {
+  right: 0;
+}
+
+/* OPEN ANIMATION */
+.stage.open .curtain.left {
+  transform: translateX(-80%);
+}
+
+.stage.open .curtain.right {
+  transform: translateX(80%);
+}
+
+/* TIE */
+.tie {
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 10px;
+  background: linear-gradient(to right, #d4af37, #f7e27b, #caa133);
+  border-radius: 20px;
+  transform: scaleX(0);
+  transition: transform 0.6s ease 1.2s;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* Tie placement */
+.curtain.left .tie {
+  right: 10px;
+  transform-origin: right;
+}
+
+.curtain.right .tie {
+  left: 10px;
+  transform-origin: left;
+}
+
+.stage.open .tie {
+  transform: scaleX(1);
+}
+
+/* HINT */
+.hint {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  color: #aaa;
+  letter-spacing: 2px;
+  font-size: 12px;
+  animation: pulse 2s infinite;
+  z-index: 3;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* WEDDING SECTION */
+.wedding-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #1a1a25 0%, #0b0b10 100%);
+  color: white;
+  text-align: center;
+}
+
+.wedding-section h2 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.scratch-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.scratch-card {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37 0%, #f7e27b 50%, #caa133 100%);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+  overflow: hidden;
+}
+
+.scratch-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Tangerine", cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0b0b10;
+  z-index: 1;
+}
+
+.scratch-overlay {
+  position: absolute;
+  inset: 0;
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="%23000"/></svg>')
+      16 16,
+    auto;
+}
+
+/* COUNTDOWN SECTION */
+.countdown-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0b0b10 0%, #1a1a25 100%);
+  color: white;
+  text-align: center;
+}
+
+.countdown-section h2 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 2px solid #d4af37;
+  border-radius: 15px;
+  min-width: 100px;
+}
+
+.countdown-value {
+  font-family: "Tangerine", cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #d4af37;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  color: #aaa;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}

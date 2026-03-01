@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Premium Curtain Reveal</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="stage" id="stage">
+      <div class="content">
+        <h1 class="tangerine-bold name-top">Saravana</h1>
+        <h1 class="tangerine-bold name-center">&</h1>
+        <h1 class="tangerine-bold name-bottom">Naveena Prashita</h1>
+      </div>
+
+      <div class="curtain left">
+        <div class="tie"></div>
+      </div>
+
+      <div class="curtain right">
+        <div class="tie"></div>
+      </div>
+
+      <div class="hint">TAP TO OPEN</div>
+    </div>
+
+    <div class="wedding-section">
+      <h2 class="tangerine-bold">Wedding On</h2>
+      <div class="scratch-cards-container">
+        <div class="scratch-card" data-value="24">
+          <div class="scratch-value">24</div>
+          <canvas class="scratch-overlay"></canvas>
+        </div>
+        <div class="scratch-card" data-value="june">
+          <div class="scratch-value">June</div>
+          <canvas class="scratch-overlay"></canvas>
+        </div>
+        <div class="scratch-card" data-value="2026">
+          <div class="scratch-value">2026</div>
+          <canvas class="scratch-overlay"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="countdown-section">
+      <h2 class="tangerine-bold">Countdown</h2>
+      <div class="countdown-container">
+        <div class="countdown-item">
+          <div class="countdown-value" id="days">0</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="hours">0</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="minutes">0</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="seconds">0</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
