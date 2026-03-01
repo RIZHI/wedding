@@ -30,16 +30,25 @@ body {
 .name-top {
   display: flex;
   justify-content: center;
+  max-width: 90vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .name-center {
   display: flex;
   justify-content: center;
+  max-width: 90vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .name-bottom {
   display: flex;
   justify-content: center;
+  max-width: 90vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* MOBILE SAFE VIEWPORT */
@@ -65,6 +74,8 @@ body {
   opacity: 0;
   transition: opacity 1.2s ease;
   z-index: 1;
+  overflow: hidden;
+  padding: 0 20px;
 }
 
 .stage.open .content {
